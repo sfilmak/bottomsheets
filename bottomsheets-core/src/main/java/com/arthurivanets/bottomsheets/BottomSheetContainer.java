@@ -56,8 +56,6 @@ abstract class BottomSheetContainer extends FrameLayout implements BottomSheet {
 
     protected final BaseConfig mConfig;
 
-    private float mDimAmount;
-
     // Dimensions
     private float mSheetCornerRadius;
     private float mMaxSheetWidth;
@@ -118,8 +116,6 @@ abstract class BottomSheetContainer extends FrameLayout implements BottomSheet {
 
 
     private void initResources(Activity hostActivity) {
-        mDimAmount = mConfig.getDimAmount();
-
         initDimensions(hostActivity);
         initColors();
         initAnimations();
@@ -485,7 +481,7 @@ abstract class BottomSheetContainer extends FrameLayout implements BottomSheet {
 
     private void setBackgroundAlpha(float alpha) {
         setBackgroundColor(Color.argb(
-            (int) (255 * alpha * mDimAmount),
+            (int) (100 * alpha),
             Color.red(mDimColor),
             Color.green(mDimColor),
             Color.blue(mDimColor)
